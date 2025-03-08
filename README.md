@@ -1,1 +1,1 @@
-# You can find the code under MASTER!! #
+# Weekly assignment 8 #
