@@ -34,24 +34,22 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
 @Composable
 fun TodoScreen(modifier: Modifier = Modifier, todoViewModel: TodoViewModel = viewModel()) {
-    TodoList(modifier,todoViewModel.todos)
+    TodoList(modifier, todoViewModel.todos)
 }
+
 @Composable
-fun TodoList(modifier: Modifier = Modifier, todos: List <Todo>) {
+fun TodoList(modifier: Modifier = Modifier, todos: List<Todo>) {
     LazyColumn(
         modifier = modifier
-    )
-    {
+    ) {
         items(todos) { todo ->
             Text(
-                text = todo,
-                modifier = Modifier.padding(top=4.dp,bottom=4.dp)
+                text = todo.title, // Assuming `title` is a property of `Todo`
+                modifier = Modifier.padding(top = 4.dp, bottom = 4.dp)
             )
             HorizontalDivider(color = Color.LightGray, thickness = 2.dp)
         }
     }
 }
-
